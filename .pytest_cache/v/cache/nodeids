@@ -1,0 +1,6 @@
+[
+  "test_currency.py::test_mult",
+  "test_currency.py::test_equality",
+  "test_currency.py::test_currency",
+  "test_currency.py::test_simple_add"
+]

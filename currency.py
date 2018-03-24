@@ -2,32 +2,33 @@
 
 class Money():
 
-    def __init__(self,amount):
+    def __init__(self, amount=0, currency="RUR"):
         self._amount = amount
+        self._currency = currency
 
     def __eq__(self, money):
-        return self._amount == money._amount and self.__class__ == money.__class__
+        return self._amount == money._amount and self._currency == money._currency
         
     def __ne__(self, money):
-        return self._amount != money._amount or self.__class__ != money.__class__
+        return self._amount != money._amount or self._currency != money._currency
     
-    def dollar(self, amount):
-        return Dollar(amount)
+    def __add__(self, money):
+        return Money(self._amount + money._amount, self._currency)
+    
+    @staticmethod
+    def dollar(amount):
+        return Money(amount, "USD")
 
-class Dollar(Money):
+    @staticmethod
+    def eur(amount):
+        return Money(amount, "EUR")
+
+    def currency(self):
+        return self._currency
+
+    def __str__(self):
+        return '{} {}'.format(self._currency, self._amount)
 
     def mult(self, multiplier):
-        return Dollar(self._amount * multiplier)
-        
-     
-class Eur(Money):
-
-    def mult(self, multiplier):
-        return Eur(self._amount * multiplier)
-        
-"""    def __eq__(self, dollar2):
-        return self._amount == dollar2._amount
-        
-    def __ne__(self, dollar2):
-        return self._amount != dollar2._amount                
-"""        
+        return Money(self._amount * multiplier, self._currency)
+    
