@@ -30,13 +30,10 @@ def test(hashMap,_files=None,_data=None):
         set.append({"nom":"Грабли -"+str(i)})
 
     inserted = db['test_3'].insert(set,upsert=True)
-    start_time = time.time()
-    a = db['test_3'].get("2")
-    start_time = time.time()
-    hashMap.put("toast","read dataset: --- %s seconds ---" % (time.time() - start_time))
+    hashMap.put("toast","вставили 3 грабли")
 
     res = db['test_3'].insert({"nom":"миксер-2"}, upsert =True)
-    hashMap.put("toast","insert 1 record: --- %s seconds ---" % (time.time() - start_time))
+    hashMap.put("toast","Вставили миксер")
     
 
     #db['test_d'].insert({"nom":"комбайн","_id":"d552a1b0-7ec0-48a5-9b39-3cf6d19d5c7f"}, upsert =True, fast=True)
