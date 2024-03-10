@@ -37,7 +37,7 @@ def on_start_barcode(hashMap,_files=None,_data=None):
     if hashMap.containsKey("barcode"):
         bc = hashMap.get('barcode')
         bc = bc.strip()
-        hashMap.put("toast", f"Прочитали ШК: {bc}")
+        #hashMap.put("toast", f"Прочитали ШК: {bc}")
         hashMap.put("ShowScreen", "Ввод количества")
         
     return hashMap
