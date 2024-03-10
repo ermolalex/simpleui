@@ -27,7 +27,7 @@ def input_qty(hashMap,_files=None,_data=None):
     #success=sql.SQLExec("insert into Record(barcode,name,qty) values(?,?,?)",hashMap.get('barcode')+","+hashMap.get("nom")+","+str(hashMap.get("qty")))
         
     #if success:    
-    hashMap.put("toast", f"Введено: {hashMap.get('qty')}")
+    #hashMap.put("toast", f"Введено: {hashMap.get('qty')}")
     hashMap.put("ShowScreen", "Сканирование штрихкода")
     #hashMap.put("toast", "Добавлено")
   
