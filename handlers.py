@@ -23,21 +23,20 @@ def init_on_start(hashMap,_files=None,_data=None):
 
 def input_qty(hashMap,_files=None,_data=None):
 
-    sql = sqlClass()
-    success=sql.SQLExec("insert into Record(barcode,name,qty) values(?,?,?)",hashMap.get('barcode')+","+hashMap.get("nom")+","+str(hashMap.get("qty")))
+    #sql = sqlClass()
+    #success=sql.SQLExec("insert into Record(barcode,name,qty) values(?,?,?)",hashMap.get('barcode')+","+hashMap.get("nom")+","+str(hashMap.get("qty")))
         
-    if success:    
-            hashMap.put("ShowScreen","РЎРєР°РЅРёСЂРѕРІР°РЅРёРµ С€С‚СЂРёС…РєРѕРґР°")
-            hashMap.put("toast","Р”РѕР±Р°РІР»РµРЅРѕ")
-
-    
+    #if success:    
+    #        hashMap.put("ShowScreen", "Сканирование штрихкода")
+    #        hashMap.put("toast", "Добавлено")
+  
     return hashMap
 
 def on_start_barcode(hashMap,_files=None,_data=None):
     if hashMap.containsKey("barcode"):
         bc = hashMap.get('barcode')
         bc = bc.strip()
-        #hashMap.put("toast", f"Прочитали ШК: {bc}")
+        hashMap.put("toast", f"Прочитали ШК: {bc}")
         hashMap.put("bc", bc)
         hashMap.put("ShowScreen", "Ввод количества")
         
