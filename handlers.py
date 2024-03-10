@@ -34,10 +34,10 @@ def input_qty(hashMap,_files=None,_data=None):
     return hashMap
 
 def on_start_barcode(hashMap,_files=None,_data=None):
-    bc = hashMap.get('barcode')
-    bc = bc.strip()
-    if bc:
-        hashMap.put("toast", hashMap.get('barcode'))
+    if hashMap.containsKey("barcode"):
+        bc = hashMap.get('barcode')
+        bc = bc.strip()
+        hashMap.put("toast", f"Прочитали ШК: {bc}")
     else:
         hashMap.put("toast", 'Empty ((')
     return hashMap
