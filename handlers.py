@@ -35,6 +35,7 @@ def input_qty(hashMap,_files=None,_data=None):
 
 def on_start_barcode(hashMap,_files=None,_data=None):
     hashMap.put("toast","Get barcode!")
+    return hashMap
 
     rows=[]    
 
